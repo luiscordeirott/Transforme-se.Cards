@@ -1,0 +1,149 @@
+:root {
+  --bg-color: #0f0c1b;
+  --card-bg: #1a162b;
+  --accent: #d4af37;
+  --text: #e0d8f0;
+}
+
+* {
+
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text);
+  font-family: "Georgia", serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+p.subtitle {
+  margin-bottom: 2rem;
+  opacity: 0.8;
+  font-style: italic;
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+}
+
+/* 3D Perspective Wrapper */
+.card-wrapper {
+  perspective: 1000px;
+  width: 200px;
+  height: 340px;
+}
+
+/* Flip Card Inner Container */
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.2, 0.85, 0.3, 1.2);
+  cursor: pointer;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+  cursor: default;
+}
+
+/* Common Card Face Styles */
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  border: 2px solid var(--accent);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Card Back (Unrevealed) */
+.card-back {
+  background: var(--card-bg);
+  background-image: radial-gradient(var(--accent) 1px, transparent 0);
+  background-size: 16px 16px;
+}
+
+.card-back-pattern {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-back-pattern::after {
+  content: "✦";
+  font-size: 2.5rem;
+  color: var(--accent);
+}
+
+/* Card Front (Revealed) */
+.card-front {
+  background-color: var(--card-bg);
+  transform: rotateY(180deg);
+  text-align: center;
+}
+
+.card-number {
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+.card-icon {
+  font-size: 4rem;
+  margin: auto 0;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+button {
+  margin-top: 3rem;
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: var(--accent);
+  color: var(--bg-color);
+}

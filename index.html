@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three-Card Tarot Reading</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <h1>As cartas, as cartas, as cartas vão dizer</h1>
+  <p class="subtitle">O passado, o presente e o futuro vamos ver!</p>
+
+  <div class="card-container">
+    <div class="card-wrapper">
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-face card-back">
+          <div class="card-back-pattern"></div>
+        </div>
+        <div class="card-face card-front">
+          <div class="card-number"></div>
+          <div class="card-icon"></div>
+          <div class="card-title"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-wrapper">
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-face card-back">
+          <div class="card-back-pattern"></div>
+        </div>
+        <div class="card-face card-front">
+          <div class="card-number"></div>
+          <div class="card-icon"></div>
+          <div class="card-title"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-wrapper">
+      <div class="card" onclick="flipCard(this)">
+        <div class="card-face card-back">
+          <div class="card-back-pattern"></div>
+        </div>
+        <div class="card-face card-front">
+          <div class="card-number"></div>
+          <div class="card-icon"></div>
+          <div class="card-title"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button onclick="resetDeck()">Reset Deck</button>
+
+<script src="../js/Tarot-Logic.js"></script>
+
+</body>
+</html>
